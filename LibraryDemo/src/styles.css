@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+/* Application-wide Styles */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+* {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  margin: 2em;
+  font-family: 'Roboto', sans-serif;
+}
+body, input[type="text"], button {
+  color: #888;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3,h5 {
+  color: #336699;
+}
+
+.btn{
+  background-color: #336699;
+  color: #ffffff;
+  padding: 5px 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+
+.btn:hover{
+  color: #ffffff;
+}
+
+.error-msg{
+  font-size: 12px;
+  color: #e60000;
+  margin-left: 130px;
+  line-height: 1;
+}
+
+.add-employee-block, .table-block{
+  margin: 20px 30px;
+}
+
+/* Add Employee block */
+.add-employee-block .add-employee-fields{
+  margin-bottom: 8px;
+}
+.add-employee-block .add-employee-fields label{
+  width: 122px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.add-employee-block .add-employee-fields input{
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  padding: 3px 5px;
+  height: 29px;
+}
+
+.add-employee-block .add-btn{
+  margin-left: 127px;
+}
+
+/* Crudlist table design */
+.table-block{
+  margin-top: 20px;
+}
+.crudlist-table{
+  border: 1px solid #a6a6a6;
+  width: 700px;
+}
+
+.crudlist-table tr{
+  border-bottom: 1px solid #a6a6a6;
+}
+.crudlist-table tr th{
+  padding: 3px 8px;
+  font-weight: 500;
+  background-color: #8c8c8c;
+  color: #ffffff;
+  font-size: 15px;
+}
+.crudlist-table tr td{
+  padding: 3px 5px;
+  font-size: 14px;
+}
+.crudlist-table tr td .fa-pencil-square{
+  color: #336699;
+  margin-right: 10px;
+}
+.crudlist-table tr td .fa-trash-o, .fa-pencil-square{
+  font-size: 20px; 
+  vertical-align: middle;
+}
+.crudlist-table tr td .fa-trash-o{
+  color: #e60000;
+}
+.crudlist-table tr th,td{
+  border-right: 1px solid #a6a6a6;
+}

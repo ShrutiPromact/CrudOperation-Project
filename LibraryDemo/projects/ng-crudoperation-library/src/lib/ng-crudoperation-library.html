@@ -1,0 +1,57 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h3>Crudlist Operation</h3>
+
+<div class="add-employee-block">
+    <h5>Add-Employee</h5>
+    <div class="add-employee-fields">
+      <label>Id:</label>
+      <input type="number" name="id" [(ngModel)]="eId">
+      <!-- <span class="error-msg" *ngIf="eIdValidation">{{eIdErrmsg}}</span> -->
+    </div>
+
+    <div class="add-employee-fields">
+      <label>Employee Name:</label>
+      <input type="text" name="employee name" [(ngModel)]="eName">
+    </div>
+
+    <div class="add-employee-fields">
+      <label>Phone Number:</label>
+      <input type="text" name="employee phone"  pattern="[0-9]*" minlength="10" maxlength="10"  [(ngModel)]="eNumber" #eNumberValid="ngModel">
+      <div [hidden]="eNumberValid.valid || eNumberValid.pristine" class="error-msg">
+        <div [hidden]="!eNumberValid.hasError('minlength')">Mobile should be 10 digit</div>
+        <div [hidden]="!eNumberValid.hasError('required')">Mobile is required</div>
+        <div [hidden]="!eNumberValid.hasError('pattern')">Mobile number should be only numbers</div>
+      </div>
+    </div>
+   
+    <button type="button" class="add-btn btn" (click)="addNewEmployee()" 
+      [disabled]="eNumberValid.hasError('minlength')||eNumberValid.hasError('required')||eNumberValid.hasError('pattern')||eNumberValid.pristine||eNumber === ''">
+      {{action}}
+    </button>
+   
+  </div>
+
+<div class="table-block" *ngIf="isEmployeeListTable">
+  <h5>List of Employee</h5>
+
+<table class="crudlist-table">
+  <tbody>
+    <tr>
+      <th>ID</th>
+      <th>Employee Name</th>
+      <th>Phone Number</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let emp of empArray">
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.phoneNumber}}</td>
+      <td>
+        <i class="fa fa-pencil-square" (click)="editEmployee(empArray, emp)"></i>
+        <i class="fa fa-trash-o" (click)="deleteEmployee(empArray, emp)"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
